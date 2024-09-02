@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyAchievements</title>
+    <style>
+        body{
+            background-image: url(https://www.shutterstock.com/shutterstock/videos/1106864925/thumb/8.jpg?ip=x480 );
+            background-repeat: no-repeat;
+           background-size: cover;
+           height: 92.7vh;
+
+
+        }
+        #dv1{
+            display:flex;
+            background-color:black;
+            margin-left: 95px;
+            margin-top: 55px;
+            margin-bottom: 55px;
+            width: 1300px;
+            height: 755px;
+            border: solid;
+           box-shadow: 0px 0px 40px greenyellow;
+            border-radius: 35px;
+           
+        }
+
+      #head{
+        margin-left: -1200px;
+        margin-top: 70px;
+        margin-bottom: 550px;
+        width: 470px;
+        height: 100px;
+      
+      }
+
+       #content{
+        margin-top: 240px;
+        margin-left: 70px;
+        height: 380px;
+        width: 1010px;
+       padding-top: 50px;
+       padding-bottom: 50px;
+       padding-left: 150px;
+     
+        border-radius: 35px;
+        box-shadow: 0px 0px 40px greenyellow;
+       }
+        
+       
+       
+        #nav{
+            background-color: black;
+            width: 650px;
+            box-shadow: 0px 0px 40px greenyellow;
+            border-radius: 35px;
+            height: 45px;
+            padding-top: 20px;
+            margin-left: 50px;
+            margin-top: 50px;
+            font-family: sans-serif;
+
+        }
+       
+
+        #nav .home{
+           
+            margin-left: 99px;
+            color: white;
+           text-decoration: none;
+           
+
+        }
+
+        #nav .profiles{
+           
+            margin-left: 60px;
+            color: white;
+            text-decoration: none;
+
+        }
+        #nav .Gallery{
+           
+           
+            margin-left: 60px;
+            color: white;
+            text-decoration: none;
+        }
+
+      #nav .achievements{
+           
+            margin-left: 60px;
+            color: white;
+            text-decoration: none;
+
+        }
+
+     
+      
+      
+
+       h1{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color:greenyellow;
+       }
+       
+       h2{
+     
+     color: white;
+    }
+      
+       
+
+        #vid1container{
+            box-shadow: 0px 0px 40px greenyellow;
+            height:380px ;
+            width: 250px;
+            border-radius: 35px;
+           
+            
+        }
+        #vid2container{
+            box-shadow: 0px 0px 40px greenyellow;
+            height:380px ;
+            width: 250px;
+            border-radius: 35px;        
+            margin-left: 290px;
+            margin-top: -380px;
+           
+        }
+        #vid3container{
+            box-shadow: 0px 0px 40px greenyellow;
+            height:380px ;
+            width: 250px;
+            border-radius: 35px;
+            margin-left: 580px;
+            margin-top: -380px;
+            
+        }
+
+        #vidone{
+          height:380px ;
+          width: 250px;
+          border-radius: 35px;
+          object-fit: cover;
+
+        }
+
+        #vidtwo{
+          height:380px ;
+          width: 250px;
+          border-radius: 35px;
+          object-fit: cover;
+
+        }
+
+        #vidthree{
+          height:380px ;
+          width: 250px;
+          border-radius: 35px;
+          object-fit: cover;
+
+        }
+
+
+        video{
+          transition: transform 0.3s ease;
+            filter: blur(6px);
+        }
+
+        video:hover{
+          transform: scale(1.1);
+          filter: blur(0px);
+        }
+       .mute-button{
+        margin-top: 15px;
+        margin-left: 220px;
+        border-radius: 50%;
+        height: 30px;
+        width: 30px ;
+       }
+       .mute-button img{
+        margin-top: -1px;
+        margin-left: -4px;
+       }
+
+       
+       
+    </style>
+</head>
+<body>
+<div id="dv1">
+        <div id="content">
+          <div  id="vid1container" > <video src="https://ia601802.us.archive.org/11/items/vid1_20240901/vid1.mp4" id="vidone" autoplay muted loop></video> 
+            <button class="mute-button" id="muteButton1" onclick="toggleMute1()"><img src="./mute.png" alt="" height="23px" width="23px" id="icon1"></button> 
+           </div>
+
+          <div  id="vid2container"> <video src="https://ia601802.us.archive.org/11/items/vid1_20240901/vid2.mp4" id="vidtwo" autoplay muted loop></video>
+                <button class="mute-button" id="muteButton2" onclick="toggleMute2()"><img src="./mute.png" alt="" height="23px" width="23px" id="icon2"></button>
+           </div>
+
+           <div id="vid3container"> <video src="https://ia601802.us.archive.org/11/items/vid1_20240901/vid3.mp4" id="vidthree" autoplay  muted loop></video>
+                <button class="mute-button" id="muteButton3" onclick="toggleMute3()"><img src="./mute.png" alt="" height="23px" width="23px" id="icon3"></button>
+            </div> 
+          
+           
+          
+        </div>
+        <script>
+            const video1 = document.getElementById('vidone');
+            const video2 = document.getElementById('vidtwo');
+            const video3 = document.getElementById('vidthree');
+            const muteButton1 = document.getElementById('icon1');
+            const muteButton2 = document.getElementById('icon2');
+            const muteButton3 = document.getElementById('icon3');
+            function toggleMute1() {
+              if (video1.muted) {
+                video1.muted = false;
+                video2.muted = true;
+                video3.muted = true;
+                muteButton1.src = './unmute.png';
+                muteButton2.src = './mute.png';
+                muteButton3.src = './mute.png';
+
+                video1.style.transform = 'scale(1.1)';
+            video1.style.filter = 'blur(0px)';
+            video2.style.transform = 'scale(1)';
+            video2.style.filter = 'blur(6px)';
+            video3.style.transform = 'scale(1)';
+            video3.style.filter = 'blur(6px)';
+
+              } else {
+                video1.muted = true;
+                muteButton1.src = './mute.png';
+
+                 video1.style.transform = 'scale(1)';
+            video1.style.filter = 'blur(6px)';
+              }
+            }
+
+            function toggleMute2() {
+              if (video2.muted) {
+                video2.muted = false;
+                video1.muted = true;
+                video3.muted = true;
+                muteButton2.src= './unmute.png';
+                muteButton1.src = './mute.png';
+                muteButton3.src = './mute.png';
+
+                video2.style.transform = 'scale(1.1)';
+            video2.style.filter = 'blur(0px)';
+            video1.style.transform = 'scale(1)';
+            video1.style.filter = 'blur(6px)';
+            video3.style.transform = 'scale(1)';
+            video3.style.filter = 'blur(6px)';
+              } else {
+                video2.muted = true;
+                muteButton2.src = './mute.png';
+
+                video2.style.transform = 'scale(1)';
+            video2.style.filter = 'blur(6px)';
+              }
+            }
+
+            function toggleMute3() {
+              if (video3.muted) {
+                video3.muted = false;
+                video1.muted = true;
+                video2.muted = true;
+                muteButton3.src = './unmute.png';
+                muteButton1.src = './mute.png';
+                muteButton2.src = './mute.png';
+
+                video3.style.transform = 'scale(1.1)';
+            video3.style.filter = 'blur(0px)';
+            video1.style.transform = 'scale(1)';
+            video1.style.filter = 'blur(6px)';
+            video2.style.transform = 'scale(1)';
+            video2.style.filter = 'blur(6px)';
+              } else {
+                video3.muted = true;
+                muteButton3.src = './mute.png';
+
+                video3.style.transform = 'scale(1)';
+                video3.style.filter = 'blur(6px)';
+              }
+            }
+
+
+
+          </script>
+  
+   <div id="head">
+    <h1>My Most Viewed Reels</h1>
+<h2>Here are some of my most viewed reels on  instagram</h2>
+   
+   </div>
+
+ 
+       
+        <div id="nav">
+
+           <a href="./index.html"  class="home">Home</a>
+           <a href="./myportprofile.html" class="profiles">Profiles</a>
+           <a href="./myportachieve.html"  class="achievements">Achievements</a>
+           <a href="./myportgallery.html"  class="Gallery">Gallery</a>
+
+
+        </div>
+      
+    
+       
+
+</div>
+   
+</body>
+</html>
